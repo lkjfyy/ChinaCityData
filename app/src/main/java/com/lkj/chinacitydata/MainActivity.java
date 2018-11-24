@@ -48,20 +48,19 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * 格式化从assets中取出的字符串集合
+     *
      * @return json字符串
      */
     @SuppressLint("LongLogTag")
     private String formatCityData() {
         List<String> strings = FileUtils.readFile(MainActivity.this, "province.txt");
-        Log.e("字符串行数",strings.size()+"");
+        Log.e("字符串行数", strings.size() + "");
         for (int i = 0; i < strings.size(); i++) {
             //每一行根据空格分割，便于取出有用的值
             List<String> list = Arrays.asList(strings.get(i).split(" "));
             cityDataList.add(list);
         }
 
-        Log.e("数据源",cityDataList.size()+"");
-       
         for (int i = 0; i < cityDataList.size(); i++) {
 
             String provinceName = cityDataList.get(i).get(1);
@@ -74,8 +73,8 @@ public class MainActivity extends AppCompatActivity {
                 province.setName(provinceName);
                 List<City> cities = new ArrayList<>();
                 province.setCityList(cities);
-                //香港，澳门，台湾，没有市级行政单位划分，城市 地区 和省份保持一致
-                if (provinceName.contains("香港") || provinceName.contains("澳门") /*|| provinceName.contains("台湾")*/) {
+                //香港，澳门，只有两级（如果想设成三级，只需自己增加一级即可）
+                if (provinceName.contains("香港") || provinceName.contains("澳门")) {
                     for (int k = 0; k < cityDataList.size(); k++) {
                         String cityName = cityDataList.get(k).get(1);
                         String cityCode = cityDataList.get(k).get(0);
@@ -88,11 +87,11 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 //直辖市 城市和省份名称一样
-                if (provinceName.contains("北京") || provinceName.contains("上海") || 
+                if (provinceName.contains("北京") || provinceName.contains("上海") ||
                         provinceName.contains("天津") || provinceName.contains("重庆")) {
                     City city = new City();
                     List<Area> areas = new ArrayList<>();
-                    city.setName(provinceName+"市");
+                    city.setName(provinceName + "市");
                     city.setCode(provinceCode);
                     city.setAreaList(areas);
                     cities.add(city);
