@@ -5,7 +5,7 @@
 
 程序运行截图
 
- ![image](ChinaCityData/screenshot.gif)
+ ![image](https://github.com/lkjfyy/ChinaCityData/blob/master/screenshot.gif)
 
 使用介绍：
 
