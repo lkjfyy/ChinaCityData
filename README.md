@@ -1,11 +1,11 @@
 # ChinaCityData
 中国最新省、市、县/区数据（包括.txt文件和.json文件）
 
-中国大陆数据采用的是：[中华人民共和国民政部行政区划代码](http://www.mca.gov.cn/article/sj/xzqh/2018/)
+中国大陆数据采用的是：[中华人民共和国民政部行政区划代码（截止到2018.10）](http://www.mca.gov.cn/article/sj/xzqh/2018/)
 
-港澳地区数据采用的是高德地图提供的最新数据：[高德地图城市编码表](https://lbs.amap.com/api/android-sdk/download)
+港澳地区数据采用的是高德地图提供的最新数据：[高德地图城市编码表（截止到2018.4）](https://lbs.amap.com/api/android-sdk/download)
 
-台湾地区数据来源：网友提供——http://www.zxinc.org/gb2260-latest.htm
+台湾地区数据来源：网友提供（截止到2018.9）——http://www.zxinc.org/gb2260-latest.htm
 
 这是一个android程序，大家可以参考使用
 
